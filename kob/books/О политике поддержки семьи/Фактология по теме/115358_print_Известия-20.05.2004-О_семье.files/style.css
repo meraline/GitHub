@@ -1,0 +1,147 @@
+BODY {
+	FONT-SIZE: 14pt; FONT-FAMILY: "Arial Cyr",Arial,Helvetica,sans-serif
+}
+TD {
+	FONT-SIZE: 14pt; FONT-FAMILY: "Arial Cyr",Arial,Helvetica,sans-serif
+}
+P {
+	FONT-SIZE: 14pt; FONT-FAMILY: "Arial Cyr",Arial,Helvetica,sans-serif
+}
+LI {
+	FONT-SIZE: 9pt; FONT-FAMILY: "Arial Cyr",Arial,Helvetica,sans-serif
+}
+OL {
+	FONT-SIZE: 9pt; FONT-FAMILY: "Arial Cyr",Arial,Helvetica,sans-serif
+}
+UL {
+	FONT-SIZE: 9pt; FONT-FAMILY: "Arial Cyr",Arial,Helvetica,sans-serif
+}
+INPUT {
+	FONT-SIZE: 14px; FONT-FAMILY: "MS Sans Serif","Arial Cyr",Arial,Helvetica,sans-serif
+}
+SELECT {
+	FONT-SIZE: 14px; FONT-FAMILY: "MS Sans Serif","Arial Cyr",Arial,Helvetica,sans-serif
+}
+A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.tdn {
+	
+}
+.tdn:hover {
+	COLOR: #aa112d
+}
+.b {
+	COLOR: #000000
+}
+.w {
+	COLOR: #ffffff
+}
+.r {
+	COLOR: #ff0000
+}
+.r1 {
+	COLOR: #aa112d
+}
+.y {
+	COLOR: #ffcc33
+}
+.g {
+	COLOR: #356a00
+}
+.gr1 {
+	COLOR: #666666
+}
+.gr2 {
+	COLOR: #66cc99
+}
+.gr {
+	COLOR: #9d9d9d
+}
+.bgg {
+	BACKGROUND-COLOR: #e9d8af
+}
+.sel {
+	COLOR: #707070
+}
+.t6 {
+	FONT-SIZE: 6pt
+}
+.t7 {
+	FONT-SIZE: 7pt
+}
+.t9 {
+	FONT-SIZE: 9pt
+}
+.t10 {
+	FONT-SIZE: 10pt; FONT-FAMILY: "Arial Cyr",Arial,Helvetica,sans-serif
+}
+.t11 {
+	FONT-SIZE: 11pt
+}
+.t12 {
+	FONT-SIZE: 12pt
+}
+.t13 {
+	FONT-SIZE: 13pt
+}
+.t14 {
+	FONT-SIZE: 14pt
+}
+.t15 {
+	FONT-SIZE: 15pt
+}
+.t16 {
+	FONT-SIZE: 16pt
+}
+.p6 {
+	FONT-SIZE: 6px
+}
+.p7 {
+	FONT-SIZE: 7px
+}
+.p8 {
+	FONT-SIZE: 8px
+}
+.p9 {
+	FONT-SIZE: 9px
+}
+.p10 {
+	FONT-SIZE: 10px
+}
+.p11 {
+	FONT-SIZE: 20px
+}
+.p12 {
+	FONT-SIZE: 12px
+}
+.p13 {
+	FONT-SIZE: 13px
+}
+.p14 {
+	FONT-SIZE: 14px
+}
+.p15 {
+	FONT-SIZE: 15px
+}
+.p16 {
+	FONT-SIZE: 23px
+}
+.p18 {
+	FONT-SIZE: 18px
+}
+.p20 {
+	FONT-SIZE: 20px
+}
+.p22 {
+	FONT-SIZE: 22px
+}
+.p24 {
+	FONT-SIZE: 24px
+}
+SMALL {
+	FONT-SIZE: 8pt; FONT-FAMILY: "MS Sans Serif",Arial,Helvetica,sans-serif
+}
+.am {
+	FONT-FAMILY: "Arial Cyr",Arial,Helvetica,sans-serif
+}

@@ -1,0 +1,1934 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0155)http://www.examen.ru/Examine.nsf/Display?OpenAgent&Pagename=defacto.html&catdoc_id=1EB1C5802671ED72C3256A0200310ED9&rootid=9327995FB7A6D40FC3256A02002CE0D5 -->
+<HTML><HEAD><TITLE>Борис Годунов</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"><LINK 
+media=screen href="Борис Годунов.files/style.css" type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript>
+if (document.images)
+{
+	//alert("processing");
+	sImageOn = new Image();
+	sImageOn.src = "/examine.nsf/rdot.gif";
+	  	
+	s0ImageOn = new Image();
+	s0ImageOn.src ="/examine.nsf/s0a.gif";
+
+
+}
+else
+{
+	sImageOn = '';
+	s0ImageOn = '';
+}
+
+
+function lightUp(imname, varName)
+{
+	if (document.images)
+	{                             
+                               //alert(varName.src);
+		document.images[imname].src=varName.src;
+	}
+}
+
+
+
+
+function dimDown(imname, imageName)
+{
+	if (document.images)
+	{
+		document.images[imname].src="/examine.nsf/"+imageName;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  Coockie time!
+
+
+
+
+function fixDate(date) {
+	var base = new Date(0);
+	var skew = base.getTime();
+
+
+	if (skew > 0) date.setTime(date.getTime() - skew);
+}
+
+
+function setCookie(name, value) {   
+var now = new Date();
+
+
+fixDate(now);
+now.setTime(now.getTime() + 1000 * 60 * 60 * 24 * 31);
+
+
+document.cookie = name + "=" + escape(value)+  "; path=/; expires=" + now.toGMTString();
+ //document.cookie = name + "=" + escape(value);
+}
+
+
+function set_login(login,password) {
+setCookie("login",login);
+setCookie("password",password);
+window.location.href=window.location;
+return false;
+}
+
+
+function drop_cookies() 
+{
+setCookie("login","");
+setCookie("password","");
+}
+
+
+
+
+
+
+//Smile to me!
+
+
+function DoSmile () 
+{
+return;
+}
+
+
+
+
+function InsertSmilie(smilie) {
+	var revisedMessage;
+	var currentMessage = document.message.content.value;
+	revisedMessage = currentMessage+" "+smilie+" ";
+	document.message.content.value=revisedMessage;
+	document.message.content.focus();
+	return;
+	}
+
+
+function showimage()
+{
+document.images["icons"].src="/examine.nsf/"+document.message.icon.options[document.message.icon.selectedIndex].value+".gif";
+}
+
+
+
+
+	function SetHomePage(pg) {
+		pg.style.behavior='url(#default#homepage)';
+		pg.setHomePage('http://www.examen.ru/');
+	}
+	
+	function AddToFavourites() {
+		window.external.addFavorite('http://www.examen.ru/', 'EXAMEN.RU - высшее образование');
+	}
+
+
+
+
+function setAnotherDate(source)
+{
+var parobj=new Object();
+parobj.value=source.value;
+var strAttr="status:no;dialogWidth:150px;dialogHeight:100px;help:no";
+showModalDialog("/examine.nsf/Display?OpenAgent&pagename=dlg_calendar.html", parobj, strAttr);
+source.value=parobj.value;
+}
+
+
+function validateEmail( eml ) {
+	var emlArray=new Array(0);
+	if(eml!='') {
+		if(eml.length<7) return false;
+		if(eml.indexOf('@')==-1) return false;
+		if(eml.indexOf('.')==-1) return false;
+		emlArray=eml.split('.');
+		if(emlArray[emlArray.length-1].length<2) return false;
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+function CheckRequiredFields()
+{
+var str1;
+var flg=false;
+for(i=0;i<document.all.length;i++)
+{
+if (document.all[i].name!=null)
+{
+str1=document.all[i].name;
+if (str1.indexOf('$required')>0)
+{
+
+
+if (document.all[i].value=='' || document.all[i].value==null || document.all[i].value=='*none*')
+{
+	flg=true;
+
+
+//  if (document.all[i].type=='checkbox')
+//	{
+//		if (document.all[i].checked) {flg=false};
+//	}
+
+
+//	if (document.all[i].length!=undefined)
+//	{
+//		var obj=document.all[i]
+//		for(j=0;j<obj.length;j++)
+//		{
+//			if (obj[j].value!='' && obj[j].value!=null && obj[j].value!='*none*')
+//			{
+//				alert(obj[j].value);
+//				flg=false;
+//			}
+//		}
+//	}
+
+
+
+
+	if (flg==true)
+	{
+		if (document.all[i].desc!='' && document.all[i].desc!=undefined){
+			alert("Поле \'"+document.all[i].desc+"\' не должно быть пустым!");
+		} else {
+			alert("Поле \'"+document.all[i].name+"\' не должно быть пустым!");
+		}
+		if (document.all[i].type!='hidden')
+		{
+			document.all[i].focus();
+		}
+		return false; 
+	}
+}
+
+
+if (document.all[i].check_formula!=null && document.all[i].check_formula!='')
+{
+	var field=document.all[i]
+	window.status='';
+	if (!eval(document.all[i].check_formula))
+		{
+		alert("Поле {"+document.all[i].desc+"} заполнено некорректно");
+		if (document.all[i].type!='hidden')
+		{
+			document.all[i].focus();
+		}
+		return false;
+		}
+	}
+}
+}
+
+
+}
+return true;
+}
+
+
+
+
+
+
+function CheckEvalFields( pref )
+{
+   var str1;
+
+
+for(i=0;i<document.all.length;i++)
+{
+if (document.all[i].name!=null)
+{
+str1=document.all[i].name;
+
+
+
+
+if (str1.indexOf('button_')<0) //Здесь не обрабатываем скрипт из кнопок
+{
+
+
+if (pref==null || pref=="")
+{
+	var bool=true;
+ }
+ else
+ {
+	var bool=(str1.indexOf( pref )>0);
+}
+
+
+if (bool)
+{
+	if (document.all[i].check_formula!=null && document.all[i].check_formula!='')
+	{
+
+
+		var field=document.all[i]
+		window.status='';
+		if (!eval(document.all[i].check_formula))
+			{
+			alert("Заполнение поля {"+document.all[i].desc+"} некорректно");
+			document.all[i].focus();
+			return false;
+			}
+		}
+	}
+}
+
+
+}
+}
+return true;
+}
+
+
+
+
+
+
+</SCRIPT>
+
+<META content="MSHTML 6.00.2712.300" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
+<TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=td-advert vAlign=center 
+align=middle><BR><BR></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle width=190><A 
+      href="http://www.examen.ru/db/Examine/default.html"><IMG hspace=11 
+      src="Борис Годунов.files/examen_new.jpg" vspace=17 border=0></A></TD>
+    <TD align=middle>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD align=left>
+            <LI class=li>&nbsp;<A class=news 
+            href="http://www.examen.ru/db/Examine/B80C767D943B4D87C3256F2B00524E70/alma.html">Высшее 
+            образование в Москве »»</A> 
+            <LI class=li>&nbsp;<A class=news 
+            href="http://www.examen.ru/db/Examine/8EF1B8655B769371C3256F2B00524EA5/doc.html">Справочная 
+            информация »»</A> 
+            <LI class=li>&nbsp;<A class=news 
+            href="http://www.examen.ru/db/Examine/2F55D910198FD75CC3256F2B00524D10/root_id/russia/doc.html">Статьи 
+            »»</A> 
+            <TABLE cellSpacing=3 cellPadding=0 align=left border=0>
+              <TBODY>
+              <TR>
+                <TD>&nbsp;&nbsp;&nbsp;</TD>
+                <TD><A 
+                  href="http://www.examen.ru/db/examine/root_id/russia/doc.html"><IMG 
+                  height=15 src="Борис Годунов.files/more.gif" width=15 
+                  border=0></A></TD>
+                <TD><A class=more 
+                  href="http://www.examen.ru/db/examine/root_id/russia/doc.html">Все 
+                  возможности</A></TD></TR></TBODY></TABLE></LI></TD></TR></TBODY></TABLE></TD>
+    <TD align=right width="10%">
+      <TABLE 
+      style="BORDER-RIGHT: #95979a 1px solid; BORDER-TOP: #95979a 1px solid; BORDER-LEFT: #95979a 1px solid; BORDER-BOTTOM: #95979a 1px solid" 
+      cellSpacing=0 cellPadding=0 width=180 border=0>
+        <TBODY>
+        <TR>
+          <TD 
+          style="BORDER-BOTTOM: #95979a 1px solid; BACKGROUND-COLOR: #c2d094" 
+          vAlign=top noWrap>
+            <DIV class=d-block><STRONG>Компания Begin Group</STRONG></DIV></TD></TR>
+        <TR>
+          <TD bgColor=#5a8108><IMG height=1 
+            src="Борис Годунов.files/blank.gif" width=1 vspace=1 border=0></TD></TR>
+        <TR>
+          <TD 
+          style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><!--	<a href="http://www.2edu.ru"><strong>2EDU</strong></a> - <a href="http://www.2edu.ru">образование для взрослых людей</a><br>	<a href="http://www.begin.ru"><strong>BEGIN</strong></a> -  <a href="http://www.begin.ru">бизнес-образование</a><br>	<a href="http://www.hrm.ru"><strong>HRM</strong></a> - <a href="http://www.hrm.ru">кадровый менеджмент</a>-->
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD class=smtxt style="FONT-FAMILY: Tahoma, Arial, Verdana" 
+                vAlign=top noWrap align=right><A 
+                  href="http://www.2edu.ru/"><STRONG class=smtxt 
+                  style="FONT-FAMILY: Tahoma, Arial, Verdana"><U>2EDU</U></STRONG></A>&nbsp;-&nbsp;</TD>
+                <TD 
+                  style="FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Arial, Verdana"><A 
+                  href="http://www.2edu.ru/">образование для взрослых 
+                людей</A></TD></TR>
+              <TR>
+                <TD colSpan=2><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+              border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD class=smtxt style="FONT-FAMILY: Tahoma, Arial, Verdana" 
+                vAlign=top noWrap align=right><A 
+                  href="http://www.hrm.ru/"><STRONG 
+                  class=smtxt><U>HRM</U></STRONG></A>&nbsp;-&nbsp;</TD>
+                <TD 
+                  style="FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Arial, Verdana"><A 
+                  href="http://www.hrm.ru/">кадровый менеджмент</A></TD></TR>
+              <TR>
+                <TD colSpan=2><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+              border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD class=smtxt style="FONT-FAMILY: Tahoma, Arial, Verdana" 
+                vAlign=top noWrap align=right><A 
+                  href="http://www.begin.ru/"><STRONG 
+                  class=smtxt><U>BEGIN</U></STRONG></A>&nbsp;-&nbsp;</TD>
+                <TD 
+                  style="FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Arial, Verdana"><A 
+                  href="http://www.begin.ru/">бизнес-образование</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- Begin top menu -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR class=td-mm>
+    <TD vAlign=top align=middle width=180><IMG height=1 
+      src="Борис Годунов.files/blank.gif" width=1 vspace=2 border=0><BR><A 
+      href="http://www.examen.ru/db/Examine/default.html"><IMG height=12 
+      hspace=4 src="Борис Годунов.files/ico-home.gif" width=14 border=0></A> <A 
+      onclick="AddToFavourites(); return false;" 
+      href="http://www.examen.ru/Examine.nsf/Display?OpenAgent&amp;Pagename=defacto.html&amp;catdoc_id=1EB1C5802671ED72C3256A0200310ED9&amp;rootid=9327995FB7A6D40FC3256A02002CE0D5#"><IMG 
+      height=11 hspace=4 src="Борис Годунов.files/ico-fav.gif" width=14 
+      border=0></A> <A href="http://www.examen.ru/db/Examine/map.html"><IMG 
+      height=12 hspace=4 src="Борис Годунов.files/ico-map.gif" width=14 
+      border=0></A> <A 
+      href="http://www.examen.ru/db/Examine/root_id/about/doc.html"><IMG 
+      height=12 hspace=4 src="Борис Годунов.files/ico-mail.gif" width=14 
+      border=0></A><BR><IMG height=1 src="Борис Годунов.files/blank.gif" width=1 
+      vspace=2 border=0><BR></TD>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle><IMG height=4 hspace=5 
+            src="Борис Годунов.files/dot-mm.gif" width=4 vspace=2 border=0> <A 
+            class=mm 
+            href="http://www.examen.ru/db/Examine/0A8CD6C44311DE05C325712900446CEA/doc.html">Выставка</A> 
+          </TD>
+          <TD>&nbsp;&nbsp;&nbsp;</TD>
+          <TD align=middle><IMG height=4 hspace=5 
+            src="Борис Годунов.files/dot-mm.gif" width=4 vspace=2 border=0> <A 
+            class=mm 
+            href="http://www.examen.ru/db/examine/5A820BED5FD8D4E0C3257114002E4CFC/doc.html">Справочник</A> 
+          </TD>
+          <TD>&nbsp;&nbsp;&nbsp;</TD>
+          <TD align=middle><IMG height=4 hspace=5 
+            src="Борис Годунов.files/dot-mm.gif" width=4 vspace=2 border=0> <A 
+            class=mm 
+            href="http://www.examen.ru/db/examine/B938CB46EEB19CE8C3257114002B3E45/doc.html">Плакат 
+            в школах</A> </TD>
+          <TD>&nbsp;&nbsp;&nbsp;</TD>
+          <TD align=middle><IMG height=4 hspace=5 
+            src="Борис Годунов.files/dot-mm.gif" width=4 vspace=2 border=0> <A 
+            class=mm 
+            href="http://www.examen.ru/db/Examine/A20DAACF2BA251B0C3256F2B00524EB5/doc.html">О 
+            проекте</A> </TD>
+          <TD>&nbsp;&nbsp;&nbsp;</TD></TR></TBODY></TABLE></TD>
+    <TD class=mm align=right><STRONG><A class=bm 
+      href="http://www.examen.ru/db/Examine/default.html">RUS</A></STRONG> | <A 
+      class=bm 
+      href="http://www.examen.ru/db/Examine/root_id/english/doc.html">ENG</A> 
+      &nbsp;&nbsp;&nbsp;<BR></TD></TR>
+  <TR>
+    <TD class=td-bline vAlign=top colSpan=3><IMG height=1 
+      src="Борис Годунов.files/blank.gif" width=1 vspace=1 
+  border=0></TD></TR></TBODY></TABLE><!-- End top menu -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=td-advert style="BORDER-RIGHT: #eae3ce 1px solid" vAlign=top 
+    align=middle width=180><!-- Begin left menu -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <FORM name=subscribe 
+          onsubmit="var fld='email'; if (document.all[fld]==null) {return true;}; if (document.all[fld].value==null || &#10;document.all[fld].value=='') {alert('Поле E-mail не заполнено!'); &#10;document.all[fld].focus(); return false;} else { if (!validateEmail(document.all[fld].value)) {alert('Поле E-mail заполнено некорректно!'); document.all[fld].focus(); return false;} }" 
+          action=/examine.nsf/Display?OpenAgent method=post><INPUT type=hidden 
+          value=subscribe.html name=PageName> <INPUT type=hidden 
+          value=subscription name=form> <INPUT type=hidden value=1 name=posting> 
+
+          <TD align=right 
+            background="Борис Годунов.files/bg-subscribe.gif"><IMG height=1 
+            src="Борис Годунов.files/blank.gif" width=1 border=0><BR><IMG 
+            height=22 hspace=6 src="Борис Годунов.files/subscribe.gif" width=101 
+            vspace=11 border=0><BR>
+            <TABLE cellSpacing=4 cellPadding=0 width="100%" border=0><FORM>
+              <TBODY>
+              <TR>
+                <TD align=right><INPUT style="WIDTH: 120px" name=email></TD>
+                <TD><INPUT class=go style="WIDTH: 45px" type=submit value=" ОK "></TD></TR></FORM></TBODY></TABLE></TD></TR></FORM></TBODY></TABLE>
+      <TABLE cellSpacing=2 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=td-mm>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV class=d-titl><A class=mm 
+                  href="http://www.examen.ru/db/examine/root_id/russia/doc.html"><B>Обучение 
+                  в России</B></A></DIV></TD>
+                <TD vAlign=top align=right><IMG height=5 
+                  src="Борис Годунов.files/corner-lm.gif" width=7 
+              border=0></TD></TR></TBODY></TABLE>
+            <TABLE class=menu-box cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=td-bline vAlign=top><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 vspace=1 
+                border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/B80C767D943B4D87C3256F2B00524E70/alma.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Высшее образование в Москве<BR><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/8EF1B8655B769371C3256F2B00524EA5/doc.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Справочная информация<BR><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/2F55D910198FD75CC3256F2B00524D10/root_id/russia/doc.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Статьи<BR><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+                border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 
+              border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+      <TABLE width="100%" border=1>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=center width="100%" bgColor=#ffffff>
+            <DIV align=center><A href="http://www.ucheba.ru/contest/2639.html" 
+            target=_blank><IMG height=90 alt="" src="Борис Годунов.files/0.gif" 
+            width=160 border=0></A></DIV></TD></TR>
+        <TR vAlign=top>
+          <TD width="100%" bgColor=#ffffff>
+            <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=90 width=160 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000><PARAM NAME="src" VALUE="http://www.begin.ru/b2_old.nsf/Resources/Flash2/$File/Tech_IT_160x90.swf"><PARAM NAME="movie" VALUE="http://www.begin.ru/b2_old.nsf/Resources/Flash2/$File/Tech_IT_160x90.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="bgcolor" VALUE="#FFFFFF">
+                <EMBED 
+            src="http://www.begin.ru/b2_old.nsf/Resources/Flash2/$File/Tech_IT_160x90.swf" 
+            quality=high bgcolor=#FFFFFF WIDTH=160 HEIGHT=90 
+            TYPE="application/x-shockwave-flash" 
+            PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED></OBJECT></TD></TR>
+        <TR vAlign=top>
+          <TD width="100%" bgColor=#ffffff>
+            <OBJECT 
+            codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 
+            height=90 width=160 
+            classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000><PARAM NAME="src" VALUE="http://www.begin.ru/b2_old.nsf/Resources/Flash2/$File/examen_IBDA11PVO.swf"><PARAM NAME="movie" VALUE="http://www.begin.ru/b2_old.nsf/Resources/Flash2/$File/examen_IBDA11PVO.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="bgcolor" VALUE="#FFFFFF">
+                <EMBED 
+            src="http://www.begin.ru/b2_old.nsf/Resources/Flash2/$File/examen_IBDA11PVO.swf" 
+            quality=high bgcolor=#FFFFFF WIDTH=160 HEIGHT=90 
+            TYPE="application/x-shockwave-flash" 
+            PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED></OBJECT></TD></TR></TBODY></TABLE><BR><BR>
+      <TABLE cellSpacing=2 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=td-mm>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV class=d-titl><A class=mm 
+                  href="http://www.examen.ru/db/examine/AC2A67D9E15D6882C3256F2B00524D13/doc.html"><B>Обучение 
+                  за рубежом</B></A></DIV></TD>
+                <TD vAlign=top align=right><IMG height=5 
+                  src="Борис Годунов.files/corner-lm.gif" width=7 
+              border=0></TD></TR></TBODY></TABLE>
+            <TABLE class=menu-box cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=td-bline vAlign=top><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 vspace=1 
+                border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/examine/4BC40B85848809DDC325715A002F6AA5/doc.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Организации<BR><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+                border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/E4A4D2B4D9ACAA52C325708A002588A0/root_id/abroad/doc.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Системы образования в разных 
+                  &nbsp;&nbsp;странах<BR><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+                border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/42A6885CF3F581ABC3256F2B00524D29/root_id/abroad/doc.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Статьи<BR><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+                border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 
+              border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=2 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=td-mm>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV class=d-titl><A class=mm 
+                  href="http://www.examen.ru/db/examine/C26B839A2E91DDD2C3256F2B00524D52/doc.html"><B>Подготовка 
+                  к поступлению</B></A></DIV></TD>
+                <TD vAlign=top align=right><IMG height=5 
+                  src="Борис Годунов.files/corner-lm.gif" width=7 
+              border=0></TD></TR></TBODY></TABLE>
+            <TABLE class=menu-box cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=td-bline vAlign=top><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 vspace=1 
+                border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/0AC49D1A00A3F645C3256F2B00524D08/doc.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;ЕГЭ<BR><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+                border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/defacto.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Энциклопедия De Facto<BR><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 
+              border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=2 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=td-mm>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV class=d-titl><A class=mm 
+                  href="http://www.examen.ru/db/examine/BF545BF31B3D93FCC3256F2B00524D04/doc.html"><B>Юридическая 
+                  информация</B></A></DIV></TD>
+                <TD vAlign=top align=right><IMG height=5 
+                  src="Борис Годунов.files/corner-lm.gif" width=7 
+              border=0></TD></TR></TBODY></TABLE>
+            <TABLE class=menu-box cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=td-bline vAlign=top><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 vspace=1 
+                border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/222F9FB3445C2C28C3256F2B00524EAB/doc.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Документы об образовании<BR><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/B806A611F0FF3B71C3256F2B00524EA4/doc.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Специальности и планы 
+                  &nbsp;&nbsp;подготовки к ним<BR><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+                border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 
+              border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><IMG height=1 
+      src="Борис Годунов.files/blank.gif" width=1 vspace=1 border=0><BR>
+      <TABLE cellSpacing=2 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=td-redm>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>&nbsp;&nbsp;<A class=mm 
+                  href="http://www.examen.ru/db/Examine/lists.html">Все 
+                  специальности</A></TD>
+                <TD align=right><IMG height=19 
+                  src="Борис Годунов.files/arrow-lm.gif" width=17 
+              border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=td-redm>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>&nbsp;&nbsp;<A class=mm 
+                  href="http://www.examen.ru/db/Examine/list.html">Все 
+                вузы</A></TD>
+                <TD align=right><IMG height=19 
+                  src="Борис Годунов.files/arrow-lm.gif" width=17 
+              border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD><!-- End left menu -->
+    <TD vAlign=top><!-- Begin center -->
+      <FORM name=affair action=/examine.nsf/Display?OpenAgent method=post>
+      <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <DIV class=d-block><A 
+            href="http://www.examen.ru/db/Examine/defacto.html">Оглавление</A> / 
+            <A 
+            href="http://www.examen.ru/db/Examine/catdoc_id/D63F7BCD377D05A0C3256A02002D216F/rootid/9327995FB7A6D40FC3256A02002CE0D5/defacto.html">Общественные 
+            и исторические науки</A> / <A 
+            href="http://www.examen.ru/db/Examine/catdoc_id/3373CF2BC002B4F2C3256A0200310EA6/rootid/9327995FB7A6D40FC3256A02002CE0D5/defacto.html">История</A> 
+            / <A 
+            href="http://www.examen.ru/db/Examine/catdoc_id/CB843D3963ED122DC3256A0200310EA9/rootid/9327995FB7A6D40FC3256A02002CE0D5/defacto.html">Рефераты</A> 
+            / <B>Борис Годунов</B></DIV></B></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD height=1></TD></TR>
+        <TR>
+          <TD align=middle width="100%" height=22><B>Борис 
+          Годунов</B></FONT></TD></TR>
+        <TR>
+          <TD height=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <P><A 
+            href="http://www.examen.ru/about.nsf/0/1eb1c5802671ed72c3256a0200310ed9/$FILE/c_062.zip"><IMG 
+            height=48 alt=c_062.zip 
+            src="D:\Транзит\Борис Годунов.files\0(1).gif" width=63 
+            border=0></A><BR>
+            <P><B><U><FONT face="Times New Roman Cyr">Введение</FONT></U></B> 
+            <P><FONT face="Times New Roman Cyr">Личность Бориса Годунова, его 
+            неслыханные возвышения и трагический конец поразили воображение 
+            современников и привлекли внимание историков, писателей, поэтов, 
+            художников, музыкантов. В этом нет ничего удивительного. Жизненный 
+            путь Бориса Годунова на редкость необычен. Начав службу заурядным 
+            дворянином, Борис занял пост правителя при слабоумном царе, а затем 
+            стал властелином огромной державы.</FONT><BR><FONT 
+            face="Times New Roman Cyr">В это время Россия вступила в полосу 
+            тяжёлых испытаний. Грандиозные стихийные бедствия на десятилетия 
+            подорвали её производительные силы. Длительная война довершила дело. 
+            В стране воцарилась неописуемая разруха. После завоевания Нарвы 
+            русские почти четверть века владели морским портом на Балтике. 
+            Проиграв Ливонскую войну, государство лишилось “нарвского 
+            мореплавания”, необходимого для развития торговли в Западной Европе. 
+            Военное поражение подорвало международные позиции 
+            России.</FONT><BR><FONT face="Times New Roman Cyr">Внешние неудачи 
+            усугубили острый внутренний кризис. Истоки его коренились в 
+            отношениях двух главных сословий феодального общества - 
+            землевладельцев и крестьян. В конце </FONT>XVI<FONT 
+            face="Times New Roman Cyr"> века корыстные интересы дворянства 
+            восторжествовали. Путы крепостной неволи связали миллионное русское 
+            крестьянство.</FONT><BR><FONT face="Times New Roman Cyr">Опричная 
+            буря расчистила поле деятельности для многих худородных дворян. 
+            Борис Годунов оказался в их числе. Первыми успехами он был обязан 
+            опричнине. Затея Грозного расколола феодальное сословие на два 
+            соперничавших лагеря. Она оставила после себя много трудных проблем. 
+            Как правитель Годунов столкнулся с ними лицом к 
+            лицу.</FONT><BR><FONT face="Times New Roman Cyr">Жизни Бориса 
+            сопутствовало много драматических событий. В первые годы его 
+            правления в Угличе погиб царевич Дмитрий, последний отпрыск 
+            трёхсотлетней московской династии. Таинственный двойник погибшего 
+            стал для Годунова и его семьи источником непоправимых бед. 
+            Неокрепшая династия была согнана с трона 
+            самозванцем.</FONT><BR><FONT face="Times New Roman Cyr">Писатель и 
+            историк Н.М.Карамзин утверждал некогда, что Годунов мог бы заслужить 
+            славу одного из лучших правителей мира, если бы он родился на 
+            троне.</FONT><BR><FONT face="Times New Roman Cyr">В глазах Карамзина 
+            лишь законные самодержцы были носителями государственного порядка. 
+            Бори узурпировал власть, убив последнего члена царской династии, и 
+            потому само провидение обрекло его на гибель.</FONT><BR><FONT 
+            face="Times New Roman Cyr">Суждения дворянского историографа о 
+            Годунове не отличались глубиной. А.С.Пушкин понимал историческое 
+            прошлое несравненно лучше. Истоки трагедии Годунова он усматривал в 
+            отношении народа к власти. Борис погиб потому, что от него 
+            отвернулся собственный народ. Крестьяне не простили ему отмены 
+            старинного Юрьева дня, ограждавшего их свободу.</FONT><BR><FONT 
+            face="Times New Roman Cyr">Начиная с В.Н.Татищева немало историков 
+            считали Годунова творцом крепостного режима. В.О.Ключевский 
+            придерживался иного взгляда: “...Мнение об установлении крепостной 
+            неволи крестьян принадлежит к числу наших исторических 
+            сказок”.</FONT><FONT face="Arial Cyr" size=4> Ключевский В.О. Соч; 
+            т.3., М., 1957; стр. 24.</FONT><FONT face="Times New Roman Cyr"> 
+            Обвинения Годунова во многих кровавых преступлениях Ключевский отмёл 
+            как клевету. Яркими красками нарисовал он портрет человека, 
+            наделённого умом и талантом, но всегда подозреваемого в двуличии, 
+            коварстве и бессердечии. Загадочная смесь добра и зла - таким 
+            виделся ему Борис.</FONT><BR><FONT 
+            face="Times New Roman Cyr">С.Ф.Платонов посвятил Годунову книгу не 
+            утратившую значения для наших дней. Он также не считал Бориса 
+            инициатором закрепощения крестьян. В своей политике, утверждал 
+            Платонов, Годунов выступал как поборник общегосударственной пользы, 
+            связавший свою судьбу с интересами среднего класса. Многочисленные 
+            обвинения против Бориса никем не доказаны. Но они запятнали 
+            правителя в глазах потомков.</FONT><BR><BR><B><FONT 
+            face="Times New Roman Cyr">Начало пути</FONT></B><BR><FONT 
+            face="Times New Roman Cyr">Предки Годунова - природные костромичи, 
+            издавна служили боярами при московском дворе. Старшая ветвь рода, 
+            Сабуровы, процветала до времени Грозного, тогда как младшие ветви, 
+            Годуновы и Вельяниновы, захирели и пришли в упадок. Бывшие 
+            костромские бояре Годуновы со временем стали вяземскими помещиками. 
+            Вытесненные из узкого круга правящего боярства в разряд 
+            провинциальных дворян, они перестали получать придворные чины и 
+            ответственные воеводские назначения.</FONT><BR><FONT 
+            face="Times New Roman Cyr">Борис Годунов родился незадолго до 
+            покорения Казани, в 1552 году. Его отец, Фёдор Иванович, был 
+            помещиком средней руки. Служебная карьера Фёдору не удалась. Фёдор и 
+            его брат Дмитрий сообща владели небольшой вотчиной в Костроме. В 
+            жизни Бориса это сыграло особую роль. После смерти отца его взял в 
+            свою семью дядя. Не только родственные чувства и ранняя кончина 
+            собственных детей побудили Дмитрия Ивановича принять особое участие 
+            в судьбе племянника. Важно было не допустить раздела последнего 
+            родового имения. Невысокое служебное положение и худородство, можно 
+            сказать спасли Годуновых в дни, когда разразилась опричная гроза. 
+            Дмитрий Годунов пережил все испытания и попал в опричный корпус в 
+            момент его формирования. Царь стремился вырваться из старого 
+            окружения. Ему нужны были новые люди, и он распахнул перед ними 
+            двери дворца. Так скромный вяземский помещик стал придворным. 
+            Служебные успехи дяди пошли на пользу племяннику 
+            Борису.</FONT><BR><FONT face="Times New Roman Cyr">Дмитрий Годунов 
+            не принадлежал к плеяде учредителей опричнины. Свой первый думный 
+            чин он получил благодаря случайному обстоятельству - внезапной 
+            смерти постельничего Наумова. Годунов занял вакантный пост главы 
+            Постельного приказа в то время, когда первые страницы опричной 
+            истории были уже заполнены.</FONT><BR><FONT 
+            face="Times New Roman Cyr">Теперь ободрённые успехами царя бояре 
+            требовали полной отмены опричнины. Верхи феодального сословия 
+            выражали недовольство. Трон зашатался. Иван тщетно искал примирения 
+            с земщиной. И тут испуганные вожди опричнины впервые прибегли к 
+            массовым казням. Волна террора вынесла на поверхность таких 
+            авантюристов, как Малюта Скуратов и Василий Грязной. Малюта Скуратов 
+            занимал одну из низших ступеней в монашеской иерархии: он числился 
+            пономарём. Но слава о его подвигах облетела всю страну. Последними 
+            жертвами опричнины стали её собственные творцы. Среди высших 
+            дворцовых чинов уцелел один постельничий Годунов. Союз Скуратова и 
+            Годунова возник под крышей Постельного приказа. Постельничим мог 
+            быть лишь расторопный и вездесущий человек, способный обставить 
+            жизнь царской семьи с неслыханной роскошью. Дмитрий Годунов вполне 
+            подходил для такой роли. Царь Иван дорожил домашними удобствами и не 
+            мог обойтись без его услуг. Постельный приказ отвечал за охрану 
+            царских покоев в ночное время. Руководствуясь политическим расчётом, 
+            Скуратов выдал дочь за племянника Дмитрия Годунова. Так Борис 
+            оказался зятем всесильного шефа опричников.</FONT><BR><FONT 
+            face="Times New Roman Cyr">В.О.Ключевский писал некогда, что Борис 
+            Годунов не запятнал себя службой в опричнине и не уронил себя в 
+            глазах общества. Но это не совсем верно. На самом деле Борис надел 
+            опричный кафтан, едва достигнув совершеннолетия. На службе в 
+            ведомстве дяди он вскоре же получил свой первый придворный чин. В 
+            качестве стряпчего Борис исполнял при дворе камергерские 
+            обязанности. Тревожное опричное время мало благоприятствовало 
+            образованию Бориса. Младшие современники считали его вовсе 
+            неграмотным. Но как бы то ни было, в юности Борис получил лишь 
+            начатки образования. Современники не могли простить ему плохого 
+            знания Священного писания. Так что по меркам </FONT>XVI <FONT 
+            face="Times New Roman Cyr">века Годунов был малообразованным 
+            господином. С отменой опричнины и смертью Малюты жизнь двора 
+            претерпела большие перемены. Не сумев сохранить родство с царевичем 
+            Иваном, Годуновы решили утвердиться при дворе его младшего брата - 
+            царевича Фёдора. Вступая в пятый брак, царь Иван объявил, что 
+            намерен женить младшего сына. Дмитрий Годунов поспешил взять дело в 
+            свои руки и сосватал царевичу свою племянницу Ирину Годунову. Все 
+            пороки Фёдора не имели большого значения в глазах постельничего и 
+            его племянника. Царь Иван, разгромив мнимый заговор в “дворовой” 
+            думе, занялся организацией новой опричнины, получившей наименование 
+            “удела”. Под конец жизни царь почти вовсе перестал пополнять обе 
+            думы боярами. Исключение было сделано для одних Годуновых. Бывший 
+            вяземский помещик Дмитрий Годунов удостоился боярского чина. Его 
+            многолетняя служба в составе опричнины, “двора” и “удела” получила 
+            высшую оценку. За тридцатилетним Борисом Годуновым не числилось 
+            никаких государственных заслуг, но и его царь возвёл в боярское 
+            достоинство. Царь постоянно возлагал на Годуновых заботу о младшем 
+            сыне. Отправляясь в военные походы, он оставлял Фёдора в безопасном 
+            месте под их присмотром. Положение Бориса было весьма почётным, но 
+            оно ограничивало поле его деятельности стенами дворца. И Борис 
+            усердно постигал тайны дворцовых интриг.</FONT><BR><FONT 
+            face="Times New Roman Cyr">В конце Ливонской войны в царской семье 
+            произошли события, круто изменившие судьбу Годуновых. В ноябре 1581 
+            года царь поссорился со старшим сыном и в припадке гнева избил его. 
+            От страшного нервного потрясения и побоев царевич Иван слёг и вскоре 
+            умер. Смерть старшего брата открыла перед Фёдором путь к трону. 
+            Окружению Фёдора эта смерть была исключительно 
+            выгодна.</FONT><BR><FONT face="Times New Roman Cyr">Завещание 
+            Грозного нанесло смертельный удар честолюбивым замыслам Годуновых. В 
+            качестве ближайших родственников Фёдора они готовились теперь 
+            забрать бразды правления в свои руки. Чтобы достичь власти, 
+            оставалось сделать один шаг. Именно в этот момент на их пути 
+            возникла непреодолимая преграда, воздвигнутая волей царя Ивана - 
+            регентский совет. При жизни Грозного его воля оказывала на события 
+            решающее влияние. Но с его смертью - а скончался Иван </FONT>IV<FONT 
+            face="Times New Roman Cyr"> в марте 1584 года - всё переменилось. 
+            Опасаясь волнений, правительство пыталось скрыть правду от народа и 
+            объявило, будто есть ещё надежда на выздоровление государя. Но 
+            несмотря на старания властей, весть о смерти царя всё таки 
+            распространилась по городу и вызвала волнение в народе. Страх перед 
+            назревшим восстанием побудил бояр поспешить с решением вопроса о 
+            преемнике Грозного. Глубокой ночью они принесли присягу наследнику - 
+            царевичу Фёдору. </FONT>3<FONT face="Times New Roman Cyr">1 мая 1584 
+            года столица торжественно отпраздновала коронацию нового царя. 
+            Фёдора короновали по чину венчания византийских императоров. Долгая 
+            церемония утомила его. Не дождавшись окончания коронации, он передал 
+            шапку Мономаха боярину князю Мстиславскому, а тяжёлое золотое яблоко 
+            (“державу”) - Борису Годунову. Этот ничтожный эпизод потряс 
+            присутствовавших. В дни коронации Фёдор возвёл шурина в чин 
+            конюшего.</FONT><BR><BR><B><FONT face="Times New Roman Cyr">Пора 
+            испытаний</FONT></B><BR><FONT face="Times New Roman Cyr">Успех 
+            Бориса нельзя объяснить одним лишь родством с царской семьёй. В 
+            неустойчивой обстановке первых дней царствования влияние Фёдора на 
+            дела управления было ничтожным. Тридцатидвухлетнему Борису помогла 
+            прежде всего его политическая изворотливость. Годунов поспешил 
+            отвернуться от покровителя, сподвижника и свояка Бельского, как 
+            только понял, что дело того проиграно. Более важное значение имело 
+            для него покровительство земских бояр. А земщина не простила 
+            Годунову его опричного прошлого. Чем выше он возносился, тем острее 
+            чувствовал непрочность своего положения. Борис прекрасно понимал, 
+            что кончина Фёдора привела бы к быстрому крушению его карьеры, и 
+            лихорадочно искал выхода. Фёдор обладал слабым здоровьем и ему 
+            предрекали короткую жизнь. В начале 1585 года Годунов направил 
+            несколько доверенных лиц в Вену и тайно предложил обсудить вопрос 
+            возведения австрийского принца на московский трон. Царь Фёдор 
+            выздоровел, а переговоры получили огласку. Фёдор был оскорблён до 
+            глубины души. Безоблачные до того отношения между родственниками 
+            омрачились. Судьба Годуновых, казалось, висела на волоске. Лагерь 
+            его сторонников таял на глазах. Причина неудачи Бориса не была 
+            тайной. Борис распустил “дворовую” охрану и тем самым лишился 
+            важного инструмента по поддержанию порядка. Он не мог эффективно 
+            контролировать положение в столице.</FONT><BR><FONT 
+            face="Times New Roman Cyr">Поражение России в Ливонской войне и 
+            военное ослабление привело к тому, что крымцы возобновили набеги на 
+            Русь. Конфликт между Россией и Крымом благоприятствовал 
+            завоевательным планам её западных соседей. Летом 1589 года над 
+            страной нависла угроза вражеского (шведского) нашествия. Россия не 
+            располагала достаточными ресурсами, чтобы выдержать войну с 
+            вражеской коалицией. В связи с голодом 1588 года осложнилось 
+            положение в столице. Толпы нищих и бродяг заполнили городские улицы. 
+            Народ винил в своих бедах Бориса Годунова; по-прежнему 
+            олицетворявшего неправедную власть. К 1589 году голод в стране 
+            кончился, но положение в Москве оставалось тревожным. 1588-1589 года 
+            Москву будоражили слухи, крайне неблагоприятные для Бориса Годунова, 
+            которые были подхвачены и раздуты за рубежом. И не обладавший</FONT> 
+            <FONT face="Times New Roman Cyr">популярностью Борис стал мишенью 
+            всевозможных нападок.</FONT><BR><BR><B><FONT 
+            face="Times New Roman Cyr">Гонения на бояр</FONT></B><BR><FONT 
+            face="Times New Roman Cyr">Политика Годунова постоянно наталкивалась 
+            на глухое сопротивление в среде удельной и боярской знати. Раздор 
+            Ьориса с боярами, недовольство “скудеющих” дворян и городские 
+            восстания вызвали политику, некоторыми чертами напоминавшую 
+            опричнину. Деятельность Бориса в самом деле приобрела отчетливый 
+            антибоярский характер. Но столкновение со знатью все же не привело к 
+            повторению опричнины. Воспитанник Грозного смог одолеть бояр без 
+            новой опричнины. Еще он был обязан своим торжеством успехам 
+            политической централизации, достигнутой к концу Х</FONT>VI<FONT 
+            face="Times New Roman Cyr"> столетия. Без поддержки окрепшего 
+            приказного аппарата Годунову едва ли удалось бы справиться со 
+            всплеском аристократической реакции. Своеобразие политического курса 
+            Годунова состояло в том, что он отказался от услуг 
+            привилегированного охранного корпуса и пытался найти прочную опору 
+            во всей массе дворянства.</FONT><BR><FONT 
+            face="Times New Roman Cyr">У Годунова была податная политика. Казна 
+            стала освобождать от податей земляную запашку помещиков, несших 
+            военную служьу.</FONT><BR><FONT face="Times New Roman Cyr">Налоговая 
+            политика Годунова носила отчетливый сословный характер. 
+            Мелкопоместные дворяне рассматривали предоставленные им посты как 
+            очень значительные. Необлагаемая боярская пашня гарантировала им 
+            пропитание и спасала от нищенской сумы, при неблагоприятной ситуации 
+            казны, освобождала от податей тем большие участки боярской пашни, 
+            чем большим поместьем владел дворянин. Таким образом, реформа 
+            податной системы принесла среднему дворянству еще большую выгоду, 
+            чем мелкому.</FONT><BR><FONT face="Times New Roman Cyr">Итак, 
+            выбившись наверх. Борис постарался забыть о своем скромном 
+            происхождении и не сразу пришел к продворянской ориентации. Поворот 
+            в его внутренней политике был ускорен раздорами с боярской 
+            аристократией и упадком дворянского ополчения. “Обеление” 
+            (освобождение) дворянских земель и подготовительные шаги к 
+            закрепощению крестьян показали, что формирование нового курса в 
+            основных чертах завершилась. Податная реформа имела исключительно 
+            важные социальные последствия. Она провела четкую грань между 
+            высшими, привилегированными сословиями феодальных землевладельцев и 
+            низшим, податным сословием зависимых 
+            крестьян.</FONT><BR><BR><B><FONT 
+            face="Times New Roman Cyr">Учреждение 
+            патриаршества</FONT></B><BR><FONT 
+            face="Times New Roman Cyr">Антифеодальные восстания, распри между 
+            боярами и полная недееспособность царя Фёдора ослабили самодержавную 
+            систему управления. Раздор между светской и духовной властями и 
+            низложение митрополита Дионисия усугубили кризис. Правительство 
+            стремилось сгладить противоречия и избежать новых столкновений с 
+            руководителями церкви. Обстановка острого социального кризиса 
+            требовало возрождение сильной церковной организации. В такой 
+            ситуации светская власть выступила с инициативой учреждения в России 
+            патриаршества. Борису Годунову удалось возвести на митрополичью 
+            кафедру своего ставника Иова. Но новый митрополит не пользовался 
+            авторитетом и популярностью. После восшествия Иова на патриарший 
+            стол власти составили так называемую утверждённую грамоту о его 
+            избрании. Она заключала в себе указание на историческую роль 
+            русского государства как оплота вселенской православной церкви. 
+            “Москва - третий Рим” при всей своей претенциозности выражала 
+            преимущество стремление ликвидировать неполноправное положение 
+            Москвы по отношению к другим центрам православия. Учреждение 
+            патриаршества укрепило престиж русской церкви и отразило новое 
+            соотношение сил внутри вселенской православной 
+            иерархии.</FONT><BR><BR><B><FONT 
+            face="Times New Roman Cyr">Внешнеполитические 
+            успехи</FONT></B><BR><FONT face="Times New Roman Cyr">Правительство 
+            Годунова продолжило внешнеполитический курс Грозного в балтийском 
+            вопросе. Но оно воздерживалось от активных действий в Прибалтике, 
+            пока существовала опасность союза Польши и Швеции. Как только эта 
+            опасность утратила реальный характер, Россия немедленно нанесла 
+            Швеции удар. Она намеревалась вернуть себе захваченные шведами 
+            русские земли, а главное, возродить “нарвское 
+            мореплавание”.</FONT><BR><FONT face="Times New Roman Cyr">В январе 
+            1590 года русские полки заняли Ян, блокировали Копорье и 
+            продвинулись к Нарве. Руководство осадой вражеской крепости взял в 
+            свои руки Борис Годунов. Недоброжелатели тогда заподозрили его в 
+            предательстве. А на самом деле распоряжения Годунова под стенами 
+            Нарвы объяснялись не его симпатиями к неприятелю, а полным 
+            отсутствием боевого опыта. 19 февраля русские предприняли 
+            генеральный штурм. Располагая громадным численным превосходством, 
+            они атаковали крепость разом в 7 пунктах. Положение шведов было 
+            таково, что стремительный натиск мог решить судьбу крепости в 
+            считанные часы. Но Борис, оказавшись во власти военной стихии с её 
+            неизменным спутником - риском, не чувствовал уверенности. Он 
+            предпочёл путь переговоров, надеясь склонить шведов к капитуляции. 
+            По условиям перемирия, заключенного под стенами Нарвы, шведы 
+            очистили захваченные ими ранее русские крепости Иван-город и 
+            Копорье. Россия вернула себе морское побережье между реками Нарвой и 
+            Невой. Но ей не удалось овладеть портом Нарвой и восстановить 
+            “нарвское мореплавание”. Таким образом основная цель наступления не 
+            была настигнута. Шведский король Юхан </FONT>III<FONT 
+            face="Times New Roman Cyr"> не желал признать своё поражение в войне 
+            с Россией и готовился к реваншу. Он заключил союз с Крымским 
+            ханством и целью вражеского вторжения стала Москва. Ранним утром 4 
+            июля 1591 года татары по серпуховской дороге вышли к Москве и заняли 
+            Котлы. Русские полки расположились под Даниловым монастырём в 
+            подвижном укреплении - “гуляй-городе”. Днём произошёл бой, а ночью 
+            татары отступили. Как и при осаде Нарвы, Борис Годунов не проявил в 
+            войне с татарами ни решительности, ни энергии. Тем не менее вся 
+            слава после победы досталась ему. Столица и двор чествовали его как 
+            героя. Борис жаждал славы великого военачальника. Но шум похвал и 
+            награды никого не ввели в заблуждение. В обычных для того времени 
+            витиеватых выражениях современники писали о том, что Годунов “во 
+            брагих же неискусен бысть”, “оруженосию же не искусен 
+            бысть”.</FONT><FONT face="Arial Cyr" size=4> Русская историческая 
+            библиотека, т.13, стр. 1283.</FONT><FONT face="Times New Roman Cyr"> 
+            Восточная политика Годунова ознаменовалась большими успехами. Россия 
+            отразила нападение татар и укрепила безопасность своих южных 
+            рубежей. В короткое время выстроены были новые пограничные крепости: 
+            Воронеж (1585 год), Ливны (1586 год), Елец (1592 год), Белгород, 
+            Оскол, Курск (1596 год). Оборонительная линия оказалась отодвинутой 
+            на юг в “дикое поле”. В правлении Бориса Годунова государство 
+            впервые смогло выделить крупные силы для систематического завоевания 
+            Сибири. Знаменитый поход Ермака послужил лишь начальным моментом 
+            великой сибирской эпопеи.</FONT><BR><BR><B><FONT 
+            face="Times New Roman Cyr">Угличская драма</FONT></B><BR><FONT 
+            face="Times New Roman Cyr">Со времён Н.М.Карамзина обвинение 
+            Годунова в убистве Дмитрия стало своего рода традицией. “Злодейское 
+            убийство”, незримо присутствует в главных сценах пушкинской трагедии 
+            о Борисе Годунове. Именно Карамзин натолкнул Пушкина на мысль 
+            изобразить в характере царя Бориса “дикую смесь: набожности и 
+            преступных страстей”.</FONT>
+            <DIV align=center><I><FONT face="Times New Roman Cyr">...Как 
+            молотком стучит в ушах упрёк,</FONT></I><BR><I><FONT 
+            face="Times New Roman Cyr">И всё тошнит, и голова 
+            кружится,</FONT></I><BR><I><FONT face="Times New Roman Cyr">И 
+            мальчики кровавые в глазах...</FONT></I></DIV><BR><FONT 
+            face="Times New Roman Cyr">Младший сын Грозного, царевич Дмитрий, 
+            погиб в Угличе в полдень 15 мая 1591 года. В то время церковь 
+            объявила Дмитрия святым. Духовенство потратило массу усилий на то, 
+            чтобы изобразить Дмитрия неповинно убиенным мучеником. Власти начали 
+            писать об “убийстве” царевича Годуновым. Толки о его самоубийстве 
+            официальная пропаганда стала размножать как еретические. Гибель 
+            Дмитрия явилась для Бориса событием нежелательным и крайне опасным. 
+            Факты опровергали привычное представление, будто устранение младшего 
+            сына Грозного было для Годунова политической необходимостью. Устами 
+            патриарха Иова церковь выразила полное согласие с выводами комиссии 
+            о нечаянной смерти царевича, мимоходом упомянув, что “царевичу 
+            Дмитрию смерть учинилась божьим судом”.</FONT><BR><FONT 
+            face="Times New Roman Cyr">Оппозиция была разгромлена, удельное 
+            княжество в Угличе ликвидировано. Острый политический кризис остался 
+            позади. Годуновы использовали ситуацию, чтобы с помощью обдуманных 
+            мер упрочить свою власть. </FONT><BR><FONT 
+            face="Times New Roman Cyr">Преданный своему многочисленному Классу, 
+            Борис наводнил родней Боярскую думу. Годунову удалось упрочить свой 
+            престиж и умножить личное состояние. Он присвоил себе множество 
+            пышных титулов. В феодальном обществе титулы служили выражением 
+            амбиций и точно определяли место титулованной особы в иерархической 
+            системе. Знать, естественно противилась домогательствам Бориса. 
+            Столкнувшись с непреодолимыми препятствиями на родине, Годунов 
+            попытался добиться признания за рубежом. Жившие в Москве иноземцы 
+            помогли ему в этом. Как бы не величали Бориса иноземные государи, 
+            Посольский приказ точно придерживался его официального титула без 
+            малейших отклонений. Изгнание из Боярской Думы открытых противников 
+            Годунова и крупные внешнеполитические успехи изменили ситуацию. По 
+            случаю поражения татар под стенами Москвы, Борис был возведен в ранг 
+            царского слуги. А титул слуги, связанный с традициями удельного 
+            времени, выше, чем все прочие титулы. Родня царя Федора, Годуновы и 
+            Романовы, объединившись вокруг трона, преодолела династический 
+            кризис, сопутствовавший утверждению у власти недееспособного сына 
+            Грозного</FONT>.<BR><BR><B><FONT 
+            face="Times New Roman Cyr">“Заповедные лета”.</FONT></B><BR><FONT 
+            face="Times New Roman Cyr">Образование единого государства в 15-16 
+            веках создало благоприятные условия для его экономического и 
+            культурного роста. Но, опираясь на возросшую мощь страны, феодальные 
+            землевладельцы ввели Юрьев день, стеснивший свободу крестьянских 
+            переходов. В конце 16 века в жизни русских крестьян наступили 
+            драматические перемены. Они утратили и ту ограниченную свободу, 
+            которую гарантировал им Юрьев день. На страну опустилась мгла 
+            крепостничества. Феодальные архивы сохранили важные крестьянские 
+            законы, изданные в правление Ивана Грозного, Бориса Годунова и 
+            первых Романовых. В длинной цепи недостает одного, но зато самого 
+            важного звена - закона об отмене Юрьева дня. Ученые ищут решения 
+            проблемы закрепощения уже больше 200 лет. В ходе дискуссии были 
+            выдвинуты две основных концепции. Одна воплотилась в теорию 
+            “указного” закрепощения крестьян, другая - в теории “безуказного” 
+            закрепощения.</FONT><BR><FONT face="Times New Roman Cyr">Известный 
+            русский историк В.Н.Татищев считал, что крестьян закрепостил Годунов 
+            специальным законом 1592 года. После смерти злосчастного Бориса 
+            текст его закона был затерян, да так основательно, что никто не смог 
+            его разыскать. Слабость “указной” теории заключалась в том, что она 
+            опиралась не на строго проверенные факты, а на догадки. Отметив это 
+            обстоятельство, В.О.Ключевский назвал исторической сказкой мнение об 
+            установлении крестьянской неволи Годуновым. “Не правительственные 
+            распоряжения, - утверждал он, - а реальные условия жизни, 
+            задолженность крестьян положили конец крестьянским переходам”. Но 
+            эта теория была поколеблена, когда в архивах обнаружились документы 
+            о “заповедных летах”. Источники рисуют картину достаточно 
+            неожиданную. В правление Годунова крепостной режим стал впервые 
+            приобретать четкие контуры. Механизм “заповедных лет” возник не из 
+            закона дательного акта, а из практических распоряжений властей. 
+            </FONT><B><FONT face="Times New Roman Cyr">Финансы </FONT></B><FONT 
+            face="Times New Roman Cyr">стали одной из главных пружин этого 
+            механизма!!! И сыграть зловещую роль крепостника суждено было Борису 
+            Годунову. Авторы исторической справки 1607 года утверждали, что 
+            благочестивый Федор закрепостил крестьян по наговору Бориса. В 
+            действительности все произошло иначе. Основы крепостнического режима 
+            были заложены приказным ведомством дьяка Андрея Щелколева. Сместив 
+            фактического соправителя, Борис присвоил плоды его многолетних 
+            усилий. Через три года после отставки дьяка Годунов облек 
+            установления Щелколева о 5-летнем сроке сыска крестьян в форму 
+            развернутого законодательного акта. Издание закона 1597 года 
+            означало, что система мер по упорядочению финансов окончательно 
+            переродилась в систему прикрепления к земле. Таким был механизм 
+            закрепощения многомиллионного русского крестьянства. Крепостной 
+            закон 1597 года был издан от имени царя Федора. Но Федор доживал 
+            свои последние дни, и современники отлично знали, от кого исходил 
+            именной указ. Крепостнический курс доставил Борису широкую поддержку 
+            со стороны феодального дворянства.</FONT><BR><BR><B><FONT 
+            face="Times New Roman Cyr">Земский собор 1598 
+            года</FONT></B><BR><FONT face="Times New Roman Cyr">Царь Федор умер 
+            в январе 1598 года. Древнюю корону 0 шапку Мономаха - надел на себя 
+            Борис Годунов, одержавший победу в борьбе за власть. Среди 
+            современников и потомков многие сочли его узурпатором. Но такой 
+            взгляд был основательно поколеблен благодаря работе В.О.Ключевского. 
+            Известный русский историк утверждал, что Борис был избран правильным 
+            Земским собором. То есть включавшим представителей дворянства, 
+            духовенства и верхов посадского населения. Мнение Ключевского 
+            поддержал Платонов. “Воцарение Годунова, -писал он, - не было 
+            следствием интриги, ибо Земский собор выбрал его вполне сознательно 
+            и лучше нас знал, за что выбирал”.</FONT><BR><FONT 
+            face="Times New Roman Cyr">При жизни Федора Годунов умел добиваться 
+            повиновения от высшей знати. После смерти царя бояре перестали 
+            скрывать свою вражду к временщику. В феодальных головах плохо 
+            укладывалась мысль об избрании в цари не слишком знатного дворянина. 
+            Годунов не мог принять венец без присяги в Боярской думе. А новые 
+            пункты присяги призваны были убедить всех, что Годунов намерен 
+            водворить в стране порядок и справедливость. Чиновники клялись, что 
+            будут судить без посулов, “в правду”. Вступая на трон, Борис 
+            испытывал крайний испуг перед тайными злоумышлениями бояр и прочих 
+            недоброжелателей. Всяк подданный должен был клятвенно обещать не 
+            учинять лиха царской фамилии. Годунов, казалось бы, предугадывал 
+            будущие потрясения и старался оградить от них себя и свою семью. 
+            Московское господство боярской аристократии определило политическую 
+            структуру Русского государства. Традиции воздвигли на пути Бориса к 
+            высшей власти непреодолимые преграды. Междуцарствие грозило в любой 
+            момент разразиться смутой. Но Годунову удалось избежать потрясений 
+            (ни разу не прибегнув к насилию). В искусстве политических 
+            комбинаций он не знал себе равных. Найдя опору в дворянской массе и 
+            среди столичного населения, Борис без кровопролития сломил 
+            сопротивление знати и стал первым “выборным” царем.Успешное начало 
+            царствования Бориса</FONT><BR><FONT 
+            face="Times New Roman Cyr">Предметный урок, полученный правителем в 
+            дни выборов, не пропал даром. Борис четко уяснил себе, что от знати 
+            зависит будущее династии, и старался заручиться поддержкой бояр. 
+            Свидетельством тому служили щедрые пожалования высших думных чинов. 
+            Княжеская аристократия, казалось, вновь обрела то влияние в Боярской 
+            думе, которым пользовалась до опричнины. Получив высшую власть, 
+            Борис не вернул думному дворянству того влияния, которым оно 
+            пользовалось при Грозном. Число думных дворян было невелико, а их 
+            роль незначительна. После 15 лет правления Годунов не страшился 
+            открытых выступлений и готов был подавить их силой. Но, подверженный 
+            суевериям, он чувствовал себя беззащитным перед тайными кознями. 
+            Один из героев трагедии А.С.Пушкина “Борис Годунов” осудил весь 
+            режим и образ правления Годунова словами:</FONT><BR><I><FONT 
+            face="Times New Roman Cyr">Он правит нами,</FONT></I> <BR><I><FONT 
+            face="Times New Roman Cyr">Как царь Иван (не к ночи будь 
+            помянут).</FONT></I><BR><I><FONT face="Times New Roman Cyr">Что 
+            пользы в том, что явных казней нет.</FONT></I><I>..</I> <BR><I><FONT 
+            face="Times New Roman Cyr">Уверены ль мы в бедной жизни 
+            нашей?</FONT></I> <BR><I><FONT face="Times New Roman Cyr">Нас каждый 
+            день опала ожидает,</FONT></I> <BR><I><FONT 
+            face="Times New Roman Cyr">Тюрьма, Сибирь, клобук иль кандалы, 
+            </FONT></I><BR><I><FONT face="Times New Roman Cyr">А там - в глуши 
+            голодна смерть иль петля. </FONT></I><BR><FONT 
+            face="Times New Roman Cyr">В действительности методы управления 
+            Годунова мало напоминали методы управления царя Ивана. Даже в самые 
+            критические моменты Борис не прибегал к погромам, резне, 
+            кровопролитию, а его опалы отличались кратковременностью. 
+            </FONT><BR><FONT face="Times New Roman Cyr">До сих пор от внимания 
+            исследователей ускользало обстоятельство, оказавшее заметное влияние 
+            на ход политической борьбы в годы царствования Годунова. Это 
+            обстоятельство - физическое состояние Бориса. Еще до коронации за 
+            рубеж стали поступать сведения о его тяжелой болезни. Врачи 
+            оказались бессильны исцелить его недуг, и царь искал спасения в 
+            молитвах и богомольях. К осени1600 здоровье Бориса резко ухудшилось. 
+            Слухи о близкой кончине Годунова искусственно возрождали обстановку 
+            династического кризиса. Борису удалось потушить мгновенно 
+            вспыхнувший конфликт и стабилизировать политическую обстановку в 
+            стране.</FONT><BR><FONT face="Times New Roman Cyr">Во внешних делах 
+            Годунов стремился достичь длительной мирной передышки и раздвинуть 
+            восточные пределы государства. Царь Борис старался поддерживать 
+            мирные отношения с Крымом и Турцией и искал мирного урегулирования 
+            дел с Речью Посполитой. В 1601 году Россия заключила 20-летнее 
+            перемирие с Речью Посполитой. Сознавая, сколь необходимы России 
+            тесные хозяйственные и культурные связи с Западной Европой, Годунов 
+            деятельно хлопотал о расширении западной торговли. Ради поощрения 
+            торговли с Западом Борис осыпал щедрыми милостями немецких купцов, 
+            некогда переселенных на Русь из завоеванных ливонских городов. Они 
+            получили от казны большие ссуды и разрешение свободно передвигаться 
+            как внутри страны, так и ее пределами. Борис проявлял живой интерес 
+            к просвещению и культуре, к успехам западной цивилизации. При нем 
+            иноземцев в стране было больше, чем когда-нибудь прежде. Борис любил 
+            общество иноземных медиков, обосновавшихся при дворе, и подолгу 
+            расспрашивал их о европейских порядках и обычаях. Новый царь зашел 
+            столь далеко в нарушении традиций, что сформировал из немцев отряд 
+            телохранителей. Годунов первым из русских “правителей отважился 
+            послать несколько дворянских “робят” за границу, для науки разных 
+            языков и грамоте”. При нем власти проявляли заботу о распространении 
+            книгопечатания, вследствие чего во многих городах были открыты 
+            типографии. Борис вынашивал планы учреждения в России школ и даже 
+            университета по европейским образцам. Годунов проявлял 
+            исключительную заботу о благоустройстве столицы, строительстве и 
+            укреплении пограничных городов. При нем в жизнь Москвы вошли 
+            неслыханные ранее технические новшества. Русские мастера соорудили в 
+            Кремле водопровод с мощным насосом, благодаря которому вода из 
+            Москвы-реки поднималась “великой мудростью” по подземельям. 
+            Заимствовав псковский опыт, Борис устроил первые в столице 
+            богадельни. В Кремле, подле Архангельского собора, он приказал 
+            выстроить обширные палаты для военных приказных ведомств, в 
+            Китай-городе, на месте сгоревших торговых рядов, - Каменные лавки. 
+            Мастера заменили старый, обветшавший мост через Неглинную новым, 
+            широким, по краям которого расположились торговые помещения. На 
+            Красной площади выросло каменное Лобное место с резными украшениями 
+            и решетчатой дверью. Строительство превратилось в подлинную страсть 
+            Годунова. По его приказу мастера надстроили столп колокольни Ивана 
+            Великого и приступили к возведению грандиозного собора “Святая 
+            святых”, призванного украсить главную площадь Кремля. Но смерть 
+            Бориса, однако, помешала осуществлению замысла.</FONT><BR><FONT 
+            face="Times New Roman Cyr">Как истинный сын своего времени Годунов 
+            сочетал интерес к просвещению с верой в чудеса. Впрочем, в те 
+            времена этому была подвержена не только Россия, но и Западная 
+            Европа. Усомнившись в помощи врачей, Годунов искал помощи у колдунов 
+            и знахарей. Еще чаще он прибегал к средству, на которое чаще всего 
+            уповали благочестивые люди Древней Руси: усердно молился и ездил на 
+            богомолья в святые места</FONT><BR><FONT 
+            face="Times New Roman Cyr">Современники считали Годунова 
+            удивительным оратором. Люди, знавшие Годунова, восхищались его 
+            речами. “От природы он наделен звучным голосом и даром красноречия”, 
+            - писал о правителе Торий. Младший современник Бориса, Семен 
+            Шаховской, назвал его человеком “весьма сладкоречивым”. Англичанин 
+            отметил манеры Бориса, красоту его лица и неизменную приветливость в 
+            обращении. По словам Шаховского, Борис “цвел благолепием” и “образом 
+            своим множество людей превзошел”. Обладая несокрушимой волей, Борис 
+            производил впечатление мягкого человека. В минуты душевного волнения 
+            на его глаза навертывались слезы. Годунов поражал современников 
+            своим постоянством в семейной жизни и привязанностью к детям. 
+            Перечисляя добродетели царя, русские писателе подчеркивали его 
+            отвращение к богомерзкому винопитию. </FONT><BR><FONT 
+            face="Times New Roman Cyr">Даже враги, отдавая должное Годунову, 
+            писали, что он мог бы совершить много великих дел, если бы не 
+            помешали ему неблагоприятные обстоятельства. Такое мнение 
+            высказывали иноземцы, и русские писатели. Конечно, чтобы оценить ту 
+            или иную похвалу, надо представить, от кого она исходит. Почитатели 
+            Бориса были дворянами, которых особенно восхищала его щедрость к 
+            служилым людям. В полной мере русские писатели оценили достоинства 
+            Бориса уже после смерти, когда трон заняли его ничтожные преемники. 
+            “Хотя явились после Годунова другие умные цари, - дипломатично 
+            замечал И.Тимофеев, - но, их разум был лишь тенью его разума”. 
+            Овладев короной, Борис навлек навлек на свою голову негодование 
+            знати. Однако, благодаря гибкой политике, ему удалось сплотить верхи 
+            вокруг трона. Роковой для династии Годунова оказалась ненависть 
+            низов. Борис воздвиг трон на вулкане.</FONT><BR><BR><B><FONT 
+            face="Times New Roman Cyr">Великий голод. Крах 
+            Годунова.</FONT></B><BR><FONT face="Times New Roman Cyr">Начало 
+            царствования Годунова казалось на редкость благополучным. Но то была 
+            только видимость. Попытки навязать народу крепостнический режим 
+            наталкивались на глухое сопротивление масс, усиливавшееся от года к 
+            году. Признаки недовольства можно было заметить повсюду - в сельской 
+            местности и в городах. </FONT><BR><FONT 
+            face="Times New Roman Cyr">При вступлении на трон Борис обещал 
+            благоденствие как дворянам, так и крестьянам. Льготы, 
+            предоставленные отдельным местностям, быстро исчерпали себя. 
+            Крестьяне стонали под тяжестью государевых податей. Налоговый гнет 
+            разорял деревню. В начале </FONT>XVII<FONT 
+            face="Times New Roman Cyr"> века сельское хозяйство пришло в упадок 
+            под влиянием стихийных бедствий. В аграрной России 
+            сельскохозяйственное производство</FONT> <FONT 
+            face="Times New Roman Cyr">отличалось крайней неустойчивостью и в 
+            огромной мере зависело от погодных условий. Изучение климатических 
+            изменений привело ученых к выводу, что на протяжении последнего 
+            тысячелетия самое крупное похолодание произошло во второй половине 
+            </FONT>XVI<FONT face="Times New Roman Cyr"> - начале XVII 
+            веков.</FONT><BR><FONT face="Times New Roman Cyr">В начале 
+            </FONT>XVII <FONT face="Times New Roman Cyr">века Россия испытала 
+            последствия похолодания и нарушения погодного цикла. Длительные 
+            дожди помешали созреванию хлебов во время холодного лета 1601 года. 
+            Ранние морозы довершили беду. В 1603 году деревне нечем было 
+            засевать поля. Наступил страшный голод. Правительство не жалело 
+            средств на борьбу с голодом. Борис провел розыск хлебных запасов по 
+            всему государству и приказал продавать народу зерно из царских 
+            житниц. Но запасы истощались довольно быстро. Немало хлеба, 
+            проданного по твердым ценам, все-таки попало в руки хлебных 
+            скупщиков. Новый царь, пытавшийся бороться с хлебной спекуляцией, 
+            даже велел казнить несколько столичных пекарей, мошенничавших на 
+            выпечке хлеба. Но все это не очень помогло. Деревня не знала 
+            бесплатной раздачи милостыни и хлеба. Крестьяне из года в год 
+            кормили государство, оброками наполняли царские житницы - однако, по 
+            феодальным меркам это не имело никакого значения. Голодавшие 
+            крестьяне если и получали хлеб, то не безвозмездно, а на условиях 
+            заемной кабалы. Обнищавшие и пришлые крестьяне не могли рассчитывать 
+            на заем и обречены были на мучительную смерть. Не обладая реальными 
+            резервами, чтобы прокормить деревню, правительство попыталось 
+            использовать социальные рычаги. 28 ноября страна узнала о 
+            восстановлении на сроком год крестьянского выхода в Юрьев день. Но 
+            не следует думать, что голод сам по себе мог привести к столь 
+            крутому социальному повороту. Годунов боялся не голода, а социальных 
+            потрясений, давно предсказанных трезвыми наблюдателями. Крестьянство 
+            оставалось немым свидетелем смены династии. Никто не думал 
+            спрашивать его мнения в день царского избрания. Каким бы ничтожным 
+            не выглядел царь Федор, народ верил ему. Борис же не был 
+            прирожденным царем. Он постарался одним ударом завоевать 
+            привязанность сельского населения. Его указ как нельзя лучше отвечал 
+            такой цели. Б.Д.Греков полагал, что крестьянская политика Годунова 
+            отвечала интересам служилой массы. Годунов избегал таких шагов, 
+            которые могли вызвать раздражение знати, и в то же время не побоялся 
+            раздражения мелкого дворянства - самой многочисленной прослойки 
+            господствующего класса. Сделав временные уступки крестьянству, 
+            власти постарались по возможности сгладить неблагоприятное 
+            впечатление, произведенное на мелких 
+            землевладельцев.</FONT><BR><FONT face="Times New Roman Cyr">А вот 
+            крестьяне по-своему истолковали благосклонное обращение к ним нового 
+            царя. Они отказывались платить “налоги и продажи”, подати и оброки, 
+            переселялись на удобные для них земли, не обращая внимание на то , 
+            что добрая половина земель в государстве оставалась заповедной. 
+            Реакция крестьян была столь бурной, что при повторном издании указа 
+            в 1602 году из него исключили слова о даровании выхода “от налога и 
+            от продаж”. В конечном счете тонко рассчитанная политика Годунова 
+            никого не удовлетворила. Династия сохранила поддержку верхушки 
+            феодального класса, зато в среде мелкого дворянства ее популярность 
+            стала быстро падать. Борису не удалось завоевать народные симпатии. 
+            Насилия помещиков и голод ожесточили крестьянство. В 1603 году 
+            страна впервые в истории стала ареной широкого повстанческого 
+            движения. В целом, движение 1603 года было движением социальных 
+            низов. Государство не могло справиться с ним без привлечения всей 
+            массы провинциального дворянства. Когда опасность миновала, дворяне 
+            потребовали от Годунова услуги за услугу. Под их давлением Борис 
+            отказался от уступок в пользу крестьян и в 1603 году аннулировал 
+            закон о временном восстановлении Юрьева дня. Возврат к старому 
+            крепостническому курсу сделал неизбежной крестьянскую войну. 
+            </FONT><BR><FONT face="Times New Roman Cyr">Трехлетний голод и 
+            разруха ввергли страну в состояние апатии. Повсюду чувствовалась 
+            усталость. Боеспособность дворянского ополчения упала. Государство 
+            вступило в полосу военных неудач. Бывший военный слуга и расстрига 
+            Отрепьев, оказавшись на гребне народного движения, ставший 
+            самозванным Дмитрием, попытался сыграть роль атамана и народного 
+            вождя, но подлинные интересы народа были ему глубоко чужды. В основе 
+            повсеместных выступлений против Годунова лежал стихийный протест 
+            угнетенных масс, которые, однако, не могли выдвинуть вождей и 
+            осмыслить задачи. Именно это и позволило авантюристу, явившемуся в 
+            подходящий момент, воспользоваться движением в корыстных целях. 
+            Обуреваемый страхом перед самозванцем, Годунов не раз засылал в его 
+            лагерь убийцу.</FONT><BR><FONT face="Times New Roman Cyr">Главной 
+            причиной “смерти” был , конечно, крепостнический курс правящих 
+            верхов. Борис вынужден был расплачиваться за свою политику. Он видел 
+            кругом смятение умов, измену. Агитация в пользу “доброго” царя 
+            распространялась повсюду, словно поветрие. Бессилие порождало 
+            жестокость. После расправы с вождем повстанцев - Хлопком в 1603 году 
+            пытки и казни превратились в повседневное явление. Восставшие 
+            холопы, посадские люди, крестьяне не могли рассчитывать на 
+            снисхождение. Крепостническое государство старалось виселицами 
+            оградить себя от народного гнева. В наиболее жестоких формах террор 
+            применялся в отношении низов, а не дворянства.</FONT><BR><FONT 
+            face="Times New Roman Cyr">13 апреля 1605 года Борис скоропостижно 
+            умер в Кремлевском дворце. Передавали, будто он из малодушия принял 
+            яд. Но то были пустые слухи. Причиной смерти его явился 
+            апоплексический удар. Бояре не оставили в покое прах Бориса. Они 
+            извлекли его труп из Архангельского собора и закопали вместе с 
+            останками жены и сына, которых задушили на заброшенном кладбище за 
+            городом.</FONT><BR><FONT face="Times New Roman Cyr">В правление 
+            Бориса Годунова в судьбах России произошел крутой перелом. 
+            Фактический преемник Грозного, Годунов расширил и упрочил дворянские 
+            привилегии. В стране утвердилось крепостное право. Законы против 
+            Юрьева дня доставили Борису поддержку феодальных землевладельцев. Но 
+            против него восстали социальные низы. Падение династии Годуновых 
+            послужило прологом к грандиозной крестьянской войне, потрясшей 
+            феодальное государство до основания.</FONT><BR><BR><B><FONT 
+            face="Times New Roman Cyr">Список литературы</FONT></B><BR><FONT 
+            face="Times New Roman Cyr">1. Костомаров Н.И. “Русская история в 
+            жизнеописаниях её главнейших деятелей”.-М.; Мысль, 
+            1991</FONT><BR><FONT face="Times New Roman Cyr">2. Скрынников Р.Г. 
+            “Борис Годунов”.М.; Наука, 1983</FONT><BR><FONT 
+            face="Times New Roman">3. </FONT><FONT 
+            face="Times New Roman Cyr">Скрынников Р.Г. “Социально-политическая 
+            борьба в Русском государстве в начале </FONT>XVII <FONT 
+            face="Times New Roman Cyr">века”.-Л.; изд-во ЛГУ, 
+            1985</FONT><BR><FONT face="Times New Roman Cyr">4. Скрынников Р.Г. 
+            “История Российская 9-17 вв.”,-М.; Весь мир, 
+            1997</FONT><BR><BR><FONT 
+            face="Times New Roman Cyr">Содержание</FONT><BR><FONT 
+            face="Times New Roman Cyr">Введение </FONT>1<BR><FONT 
+            face="Times New Roman Cyr">Начало пути </FONT>3<BR><FONT 
+            face="Times New Roman Cyr">Пора испытаний </FONT>6<BR><FONT 
+            face="Times New Roman Cyr">Гонения на бояр </FONT>7<BR><FONT 
+            face="Times New Roman Cyr">Учреждение патриаршества 
+            </FONT>8<BR><FONT face="Times New Roman Cyr">Внешнеполитические 
+            успехи </FONT>9<BR><FONT face="Times New Roman Cyr">Угличская драма 
+            </FONT>11<BR><FONT face="Times New Roman Cyr">“Заповедные лета”. 
+            </FONT>13<BR><FONT face="Times New Roman Cyr">Земский собор 1598 
+            года </FONT>15<BR><FONT face="Times New Roman Cyr">Успешное начало 
+            царствования Бориса </FONT>16<BR><FONT 
+            face="Times New Roman Cyr">Великий голод. Крах Годунова. 
+            </FONT>19<BR><FONT face="Times New Roman Cyr">Список литературы 
+            </FONT>22<BR><FONT face="Times New Roman Cyr">Содержание 
+            </FONT>23<BR></TD></TR></TBODY></TABLE>
+      <HR SIZE=1>
+
+      <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD colSpan=2 height=1></TD></TR>
+        <TR height=26>
+          <TD align=right width="100%"><SELECT class=input name=jumpmenu> 
+              <OPTION selected>Быстрый переход в соседний раздел</OPTION> 
+              <OPTION value=E79814F3ADAF716BC3256A0200310EBC>1934 ГОД</OPTION> 
+              <OPTION value=32CAA97C86904777C3256A0200310EB6>Аграрные 
+              преобразования в СССР. Их последствия.</OPTION> <OPTION 
+              value=EDA2E311093F831EC3256A0200310EAC>АЛЕКСАНДР II И ЕГО 
+              РЕФОРМЫ</OPTION> <OPTION 
+              value=213F3BEDC383569EC3256A0200310EAA>Анализ деятельности 
+              Александра Невского в период..</OPTION> <OPTION 
+              value=0D16A21CF0EDAEB5C3256A0200310ED0>Антлантида</OPTION> <OPTION 
+              value=00A68215DDE9F8E0C3256A0200310EBD>Афинское государство в V 
+              веке до н.э.</OPTION> <OPTION 
+              value=58E8D55CAB18DCF6C3256A0200310EAB>Битва под Курском</OPTION> 
+              <OPTION value=1EB1C5802671ED72C3256A0200310ED9>Борис 
+              Годунов</OPTION> <OPTION 
+              value=967F26E6AF7A56AFC3256A0200310ECE>Борис Годунов</OPTION> 
+              <OPTION value=170F0DBA64FA2C5DC3256A0200310EC0>Брест-Литовский 
+              договор</OPTION> <OPTION 
+              value=D4E1B11FDE05990AC3256A0200310EBA>ВНЕШНЯЯ ПОЛИТИКА СССР В 
+              ПРЕДВОЕННЫЕ ГОДЫ (30-ые ..</OPTION> <OPTION 
+              value=E5E83A06764EF7B2C3256A0200310ED2>Военные реформы 1905-1912 
+              годов</OPTION> <OPTION 
+              value=468AFE90E9EA58E6C3256A0200310EB3>ВОЗНИКНОВЕНИЕ И РАЗВИТИЕ 
+              ФЕОДАЛЬНОГО ГОСУДАРСТВА..</OPTION> <OPTION 
+              value=E4D555098D972E0BC3256A0200310EB5>Восстание декабристов. 
+              Причины поражения.</OPTION> <OPTION 
+              value=A909083204487F86C3256A0200310EB0>Государство и право в 
+              Древних государствах</OPTION> <OPTION 
+              value=E5D86F5E402D8C00C3256A0200310EC9>Европейское средневековье: 
+              отличительные черты ц..</OPTION> <OPTION 
+              value=8CF84EE2DEECF27DC3256A0200310EAD>Екатерина II</OPTION> 
+              <OPTION value=3B504607FFF82282C3256A0200310EAF>Иван III</OPTION> 
+              <OPTION value=F5BFB9848F33B885C3256A0200310EC5>Иван 
+              Грозный</OPTION> <OPTION 
+              value=22A32653A76B56DAC3256A0200310ED6>Карибский кризис 1962 года. 
+              Мир на грани войны.</OPTION></SELECT></TD>
+          <TD align=left>&nbsp;<INPUT class=go onclick="window.location='/db/Examine/catdoc_id/'+document.affair.jumpmenu[document.affair.jumpmenu.selectedIndex].value+'/rootid/9327995FB7A6D40FC3256A02002CE0D5/defacto.html'" type=button value=" Перейти " name=jumpbutton>&nbsp;</TD></TR>
+        <TR>
+          <TD colSpan=2 height=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0 
+        valign="bottom"><TBODY>
+        <TR>
+          <TD align=right><A 
+            href="http://www.examen.ru/Examine.nsf/Display?OpenAgent&amp;Pagename=defacto.html&amp;catdoc_id=1EB1C5802671ED72C3256A0200310ED9&amp;rootid=9327995FB7A6D40FC3256A02002CE0D5#top">К 
+            началу страницы</A></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%" bgColor=#ff0000>
+            <TABLE cellSpacing=1 cellPadding=1 width="100%" border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="14%" bgColor=#ffffff><A 
+                  href="http://www.webtutor.ru/"><IMG height=135 alt="" 
+                  src="D:\Транзит\Борис Годунов.files\0(2).gif" width=117 
+                  border=0></A></TD>
+                <TD width="86%" bgColor=#ffffff>
+                  <DIV align=center><B><FONT size=4>БЕСПЛАТНОЕ ДИСТАНЦИОННОЕ 
+                  ОБУЧЕНИЕ НА </FONT></B><A 
+                  href="http://www.webtutor.ru/"><B><FONT 
+                  size=4>WEBTUTOR.RU</FONT></B></A><B><FONT 
+                  size=4>:</FONT></B></DIV><BR><IMG height=12 alt="" 
+                  src="D:\Транзит\Борис Годунов.files\0(3).gif" width=12><FONT 
+                  size=4>Более 50 мультимедийных учебных курсов</FONT><BR><IMG 
+                  height=12 alt="" src="D:\Транзит\Борис Годунов.files\0(4).gif" 
+                  width=12><FONT size=4>Интерактивная бизнес-школа на экране 
+                  Вашего компьютера</FONT><BR>
+                  <DIV align=center><BR><A 
+                  href="http://www.webtutor.ru/"><B>Начать 
+                обучение</B></A></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+    <TD style="BORDER-LEFT: #eae3ce 1px solid" vAlign=top align=middle width=180 
+    bgColor=#f4f8e6>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle><IMG height=1 src="Борис Годунов.files/blank.gif" 
+            width=1 vspace=1 border=0><BR>
+            <TABLE cellSpacing=6 cellPadding=0 width="100%" border=0>
+              <FORM name=search 
+              onsubmit="if (document.all['find_fulltext'].value==null || document.all['find_fulltext'].value=='') {alert('Поле поиска не заполнено!'); document.all['find_fulltext'].focus(); return false;}" 
+              action=/examine.nsf/Display?OpenAgent method=post><INPUT 
+              type=hidden value=search_result.html name=PageName> <INPUT 
+              type=hidden value=1 name=posting> <INPUT type=hidden value=Doc 
+              name=Find_$lquote_form> <INPUT type=hidden value=URL 
+              name=Find_$or_form> <INPUT type=hidden value=Comment 
+              name=Find_$or_$rquote_form> 
+              <TBODY>
+              <TR>
+                <TD align=right><FORM><INPUT style="WIDTH: 110px" 
+                  name=find_fulltext></TD>
+                <TD><INPUT class=go style="WIDTH: 50px" type=submit value=Поиск></TD></TR></FORM></TBODY></TABLE><IMG 
+            height=1 src="Борис Годунов.files/blank.gif" width=1 vspace=1 
+            border=0><BR></TD></FORM></TR></TBODY></TABLE>
+      <TABLE cellSpacing=2 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=td-mm>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV class=d-titl><A class=mm 
+                  href="http://www.examen.ru/db/Examine/num/1/calendar.html">Календарь 
+                  событий</A></DIV></TD>
+                <TD vAlign=top align=right><IMG height=5 
+                  src="Борис Годунов.files/corner-lm.gif" width=7 
+              border=0></TD></TR></TBODY></TABLE>
+            <TABLE class=menu-box cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=td-bline vAlign=top><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 vspace=1 
+                border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/num/1/calendar.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Дни открытых дверей<BR><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+                border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/num/2/calendar.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Прием документов и 
+                  &nbsp;&nbsp;вступительные экзамены<BR><IMG height=2 
+                  src="Борис Годунов.files/blank.gif" width=1 
+                border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/num/3/calendar.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Подготовительные курсы<BR><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 border=0></TD></TR>
+              <TR>
+                <TD class=td-lm>
+                  <DIV><A 
+                  href="http://www.examen.ru/db/Examine/calendar.html"><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0><BR>&nbsp;&nbsp;Конференции и выставки<BR><IMG 
+                  height=2 src="Борис Годунов.files/blank.gif" width=1 
+                  border=0></A></DIV></TD></TR>
+              <TR>
+                <TD class=td-mline><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 
+              border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle><IMG height=1 src="Борис Годунов.files/blank.gif" 
+            width=1 vspace=2 border=0><BR><A 
+            href="http://www.examen.ru/examine_old.nsf/redirect?openagent&amp;doc_id=4E8A1E817C3BC1B6C325720A003731FD" 
+            target=_new><IMG src="Борис Годунов.files/planetaedu_160x90.gif" 
+            border=0></A><BR><IMG height=1 src="Борис Годунов.files/blank.gif" 
+            width=1 vspace=2 border=0><BR></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=2 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=td-mm>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD class=td-rmt>
+                  <DIV class=d-titl><STRONG>Горячие темы форумов </STRONG></DIV>
+                <TD class=td-rmt1 vAlign=top align=right width=6><IMG height=5 
+                  src="Борис Годунов.files/corner-rm.gif" width=6 
+              border=0></TD></TR></TBODY></TABLE>
+            <TABLE class=menu-box1 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=td-b1line vAlign=top colSpan=2><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 vspace=1 
+                border=0></TD></TR>
+              <TR>
+                <TD class=td-rm>
+                  <DIV class=d-block><SPAN class=dater>14.11.2006</SPAN><BR><A 
+                  class=news 
+                  href="http://www.examen.ru/db/Examine/83CADEBFFEFA8D6AC32572260048CBE5/extended/1/main_id/7D2C3457CD16AA75C3256F2B00524EAD/forum_card.html#83CADEBFFEFA8D6AC32572260048CBE5">kakie 
+                  dokumenti nuzhni inostrancu 4tobi postupatj v vuz v 
+                  magistraturu?<BR>ja bi o4enj xotela u4itsja v magistraturu v 
+                  moskve(konkretnjeje MGU v imenji D.Mendeljejeva,no 
+                  dazhe...</A><BR></DIV></TD></TR>
+              <TR>
+                <TD class=td-rm>
+                  <DIV class=d-block><SPAN class=dater>05.11.2006</SPAN><BR><A 
+                  class=news 
+                  href="http://www.examen.ru/db/Examine/7CAD07E66F513F1CC325721D0048C71B/extended/1/main_id/7D2C3457CD16AA75C3256F2B00524EAD/forum_card.html#7CAD07E66F513F1CC325721D0048C71B">Re: 
+                  (3) Как поступить в МГИМО<BR>а курсы вообще есть?и как про них 
+                  можно узнать?...</A><BR></DIV></TD></TR>
+              <TR>
+                <TD class=td-rm>
+                  <DIV class=d-block><SPAN class=dater>05.11.2006</SPAN><BR><A 
+                  class=news 
+                  href="http://www.examen.ru/db/Examine/7A11CEE2D9870D26C325721D00485D81/extended/1/main_id/7D2C3457CD16AA75C3256F2B00524EAD/forum_card.html#7A11CEE2D9870D26C325721D00485D81">Re: 
+                  (2) Как поступить в МГИМО<BR>а где взять эту программу для 
+                  подготовки?...</A><BR></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle><IMG height=1 src="Борис Годунов.files/blank.gif" 
+            width=1 vspace=2 border=0><BR><A 
+            href="http://www.examen.ru/examine_old.nsf/redirect?openagent&amp;doc_id=6B8F59ED0A64D911C3257228003D71D5" 
+            target=_new><IMG src="Борис Годунов.files/gamenavigator_160x90.gif" 
+            border=0></A><BR><IMG height=1 src="Борис Годунов.files/blank.gif" 
+            width=1 vspace=2 border=0><BR></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=2 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD background="Борис Годунов.files/questbg.gif">
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width=50><IMG height=39 hspace=8 
+                  src="Борис Годунов.files/quest.gif" width=31 border=0></TD>
+                <TD vAlign=bottom>
+                  <DIV class=d-titl><STRONG>Опрос</STRONG></DIV></TD>
+                <TD vAlign=top align=right><IMG height=39 
+                  src="Борис Годунов.files/corner-q.gif" width=6 
+              border=0></TD></TR></TBODY></TABLE>
+            <TABLE class=menu-box1 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=td-b1line vAlign=top colSpan=2><IMG height=1 
+                  src="Борис Годунов.files/blank.gif" width=1 vspace=1 
+                border=0></TD></TR>
+              <TR>
+                <TD class=td-rm>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <FORM name=vote action=/examine.nsf/Display?OpenAgent 
+                      method=post><INPUT type=hidden value=voting.html 
+                      name=PageName> <INPUT type=hidden value=1 name=posting> 
+                    <TR>
+                      <TD class=td-advert>
+                        <DIV class=d-block>Есть ли у Вас опыт 
+работы?</DIV></TD></TR>
+                    <TR>
+                      <TD class=td-mline><IMG height=1 
+                        src="Борис Годунов.files/blank.gif" width=1 
+                    border=0></TD></TR>
+                    <TR>
+                      <TD><INPUT type=hidden 
+                        value=963C68786B9BAFB9C325718E006DE52E name=doc_id> 
+                        <TABLE cellSpacing=6 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD width="1%"><INPUT class=radio type=radio 
+                              value="Да, у меня постоянная работа" name=Answer> 
+                            </TD>
+                            <TD>Да, у меня постоянная работа</TD></TR>
+                          <TR>
+                            <TD width="1%"><INPUT class=radio type=radio 
+                              value="Да, я работаю во время каникул" 
+                              name=Answer> </TD>
+                            <TD>Да, я работаю во время каникул</TD></TR>
+                          <TR>
+                            <TD width="1%"><INPUT class=radio type=radio 
+                              value="Да, я иногда беру подработки" name=Answer> 
+                            </TD>
+                            <TD>Да, я иногда беру подработки</TD></TR>
+                          <TR>
+                            <TD width="1%"><INPUT class=radio type=radio 
+                              value="Да, я работаю вечерами" name=Answer> </TD>
+                            <TD>Да, я работаю вечерами</TD></TR>
+                          <TR>
+                            <TD width="1%"><INPUT class=radio type=radio 
+                              value="Нет, но хотел бы начать работать со 2-3 курса вуза" 
+                              name=Answer> </TD>
+                            <TD>Нет, но хотел бы начать работать со 2-3 курса 
+                              вуза</TD></TR>
+                          <TR>
+                            <TD width="1%"><INPUT class=radio type=radio 
+                              value="Нет, но хотел бы начать работать с 4-5 курса вуза" 
+                              name=Answer> </TD>
+                            <TD>Нет, но хотел бы начать работать с 4-5 курса 
+                              вуза</TD></TR>
+                          <TR>
+                            <TD width="1%"><INPUT class=radio type=radio 
+                              value="Нет, и пока не планирую работать до окончания вуза" 
+                              name=Answer> </TD>
+                            <TD>Нет, и пока не планирую работать до окончания 
+                              вуза</TD></TR>
+                          <TR>
+                            <TD align=middle colSpan=2><INPUT class=go type=submit value=Проголосовать name=Submit></TD></TR></TBODY></TABLE></TD></TR></FORM></TBODY></TABLE></TR></TBODY></TABLE></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=td-bline vAlign=top colSpan=2><IMG height=1 
+      src="Борис Годунов.files/blank.gif" width=1 vspace=1 border=0></TD></TR>
+  <TR class=td-mm>
+    <TD><IMG height=1 src="Борис Годунов.files/blank.gif" width=1 vspace=2 
+      border=0><BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <A class=bm 
+      href="http://www.examen.ru/db/Examine/root_id/about/doc.html">О 
+      проекте</A> &nbsp; <A class=bm 
+      href="http://www.examen.ru/db/Examine/map.html">Карта сайта</A> &nbsp; <A 
+      class=bm onclick="AddToFavourites(); return false;" 
+      href="http://www.examen.ru/Examine.nsf/Display?OpenAgent&amp;Pagename=defacto.html&amp;catdoc_id=1EB1C5802671ED72C3256A0200310ED9&amp;rootid=9327995FB7A6D40FC3256A02002CE0D5#">Добавить 
+      в избранное</A> &nbsp; <A class=bm 
+      href="http://www.examen.ru/db/Examine/root_id/about/doc.html">Напишите 
+      нам</A><BR><IMG height=1 src="Борис Годунов.files/blank.gif" width=1 
+      vspace=2 border=0><BR></TD>
+    <TD noWrap align=right width="5%"><A class=bm 
+      href="http://www.examen.ru/Examine.nsf/Display?OpenAgent&amp;Pagename=defacto.html&amp;catdoc_id=1EB1C5802671ED72C3256A0200310ED9&amp;rootid=9327995FB7A6D40FC3256A02002CE0D5#"><IMG 
+      height=8 src="Борис Годунов.files/ico-top.gif" width=5 
+      border=0>&nbsp;Вверх</A>&nbsp;<BR></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2 height=21>
+      <DIV class=d-block><SMALL class=copy>&nbsp; © 2005 Begin Group. Все права 
+      защищены и охраняются законом.</SMALL></DIV></TD>
+    <TD noWrap align=right colSpan=2 height=21>
+      <DIV class=d-block><SMALL class=copy>Телефон: +7 (495) 933-1098<BR>E-mail: 
+      <A class=copy 
+      href="mailto:webmaster@begin.ru">webmaster@begin.ru</A></SMALL></DIV></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=5 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><A href="http://counter.rambler.ru/top100/"><IMG height=1 
+      alt="Rambler's Top100" src="Борис Годунов.files/top100.gif" width=1 
+      border=0></A> <IMG height=31 alt=Статистика hspace=0 
+      src="Борис Годунов.files/rambler.gif" width=88 border=0> <!--end of Top100 code--></TD>
+    <TD align=middle><!--TopList COUNTER--><A 
+      href="http://top.list.ru/jump?from=37449" target=_top>
+      <SCRIPT language=JavaScript><!--
+d=document;js=10;a=';r='+escape(d.referrer)
+//--></SCRIPT>
+
+      <SCRIPT language=JavaScript1.1><!--
+js=11;a+=';j='+navigator.javaEnabled()
+//--></SCRIPT>
+
+      <SCRIPT language=JavaScript1.2><!--
+js=12;s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+//--></SCRIPT>
+
+      <SCRIPT language=JavaScript1.3><!--
+js=13//--></SCRIPT>
+
+      <SCRIPT language=JavaScript><!--
+d.write('<img src="http://top.list.ru/counter'+
+'?id=37449;t=31;js='+js+a+'" alt="TopList" '+
+'border=0 height=31 width=88>')
+if(js>11)d.write('<'+'!-- ')//--></SCRIPT>
+      <NOSCRIPT><IMG height=31 alt=TopList src="Борис Годунов.files/counter.gif" 
+      width=88 border=0></NOSCRIPT>
+      <SCRIPT language=JavaScript><!--
+if(js>11)d.write('--'+'>')
+//--></SCRIPT>
+      </A><!--TopList COUNTER--> </TD>
+    <TD><COUNTER_KM_MAIN></TD>
+    <TD align=middle><A href="http://www.lotus.com/"><IMG alt=domino 
+      src="Борис Годунов.files/domino.gif" border=0> </A></TD>
+    <TD align=middle><A 
+      href="http://www.websoft.ru/wb.nsf/display?openagent&amp;pagename=doc.html&amp;root_id=wb"><IMG 
+      src="Борис Годунов.files/wb_88x31.gif" border=0></A> </TD>
+    <TD align=right><!-- SpyLOG v2 f:0211 -->
+      <SCRIPT language=javascript>
+u="u134.55.spylog.com";d=document;nv=navigator;na=nv.appName;t="";p=0;
+sz=" width=88 height=31 ";
+hl=history.length;d.cookie="b=b";c=0;
+bv=Math.round(parseFloat(nv.appVersion)*100);
+if (d.cookie) c=1;n=(na.substring(0,2)=="Mi")?0:1;
+if((n==0)||(bv >= 300)){rn=Math.random();t=(new Date()).getTimezoneOffset();} 
+else {rn=0;}
+z="p="+p+"&rn="+rn+"&t="+t+"&c="+c+"&hl="+hl;
+if (self != top) { fr=1;} else { fr=0;}
+r=escape(d.referrer);r1="";
+sl="1.0";h=0;
+</SCRIPT>
+
+      <SCRIPT language=javascript1.1>
+pl="";sl="1.1";
+if((n==1) && (bv >= 300))
+{ for(var i = 0; i < nv.plugins.length; i++)
+  pl += nv.plugins[i].name+":"; }
+j = (navigator.javaEnabled() ? "Y" : "N");
+</SCRIPT>
+
+      <SCRIPT language=javascript1.2>
+sl="1.2";s=screen;wh=s.width+'x'+s.height;
+px=(n==0)?screen.colorDepth:screen.pixelDepth;z+="&wh="+wh+"&px="+px;
+</SCRIPT>
+
+      <SCRIPT language=javascript1.3>
+sl="1.3"
+</SCRIPT>
+
+      <SCRIPT language=javascript>
+y="";
+y+="<a href='http://"+u+"/cnt?f=3&p="+p+"&rn="+rn+"' target=_blank>";
+y+="<img src='http://"+u+"/cnt?";
+y+=z+"&j="+j+"&sl="+sl+"&r="+r+"&r1="+r1+"&fr="+fr+"&pg="+escape(window.location
+.href)+"&pl="+escape(pl);
+y+="' border=0 "+sz+" alt='SpyLOG'>";
+y+="</a>";
+d.write(y);
+</SCRIPT>
+
+      <SCRIPT language=javascript1.2><!--
+if (n == 0) { d.write("<");d.write("!--"); }
+//--></SCRIPT>
+      <NOSCRIPT><A href="http://u134.55.spylog.com/cnt?f=3&amp;p=0" 
+      target=_blank><IMG height=31 alt=SpyLOG src="Борис Годунов.files/cnt.gif" 
+      width=88 border=0> </A></NOSCRIPT>
+      <SCRIPT language=javascript1.2><!--
+if (n == 0) { d.write("--");d.write(">"); }
+//--></SCRIPT>
+<!-- SpyLOG  --></TD>
+    <TD></TD>
+    <TD><!-- HotLog -->
+      <SCRIPT language=javascript>
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=18388&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</SCRIPT>
+
+      <SCRIPT language=javascript1.1>
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</SCRIPT>
+
+      <SCRIPT language=javascript1.2>
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</SCRIPT>
+
+      <SCRIPT language=javascript1.3>hotlog_js="1.3"</SCRIPT>
+
+      <SCRIPT language=javascript>hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<img src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1>")</SCRIPT>
+      <NOSCRIPT><IMG height=1 src="" width=1 border=0></NOSCRIPT> <!-- /HotLog --><A href="http://www.hotlog.ru/" target=_top><IMG height=31 
+      alt=HotLog src="Борис Годунов.files/88_31_5.gif" width=88 border=0></A> 
+  </TD></TR></TBODY></TABLE></BODY></HTML>
